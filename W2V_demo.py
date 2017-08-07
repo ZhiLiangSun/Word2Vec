@@ -33,8 +33,8 @@ def main():
                 res = model.similarity(q_list[0], q_list[1])
                 print(res)
             else:
-                print("%s之於%s，如%s之於" % (q_list[0], q_list[2], q_list[1]))
-                res = model.most_similar([q_list[0], q_list[1]], [q_list[2]], topn=10)
+                print("%s之於%s，如%s之於" % (q_list[0], q_list[1], q_list[2]))
+                res = model.most_similar(positive=[q_list[1], q_list[2]], negative=[q_list[0]], topn=5)
                 for item in res:
                     print(item[0] + "," + str(item[1]))
             print("----------------------------")
