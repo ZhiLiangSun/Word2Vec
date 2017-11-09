@@ -185,6 +185,7 @@ venv.bak/
 
 # Word2Vec
 *.text
+*.txt
 *.bz2
 *.model
 *.npy

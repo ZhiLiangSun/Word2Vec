@@ -12,10 +12,10 @@ for query in topic_query:
 
     for q in q_list:
         try:
-            res = model.most_similar(q, topn=1)
+            res = model.most_similar(positive=["good", q], negative=["bad"], topn=1)
             for item in res:
                 print(item[0] + "," + str(item[1]))
-                with open("SyOutput.txt", "a") as text_file:
+                with open("AnOutput.txt", "a") as text_file:
                     text_file.write(item[0] + " " + str(item[1]) + "\r\n")
         except KeyError as e:
             pass
