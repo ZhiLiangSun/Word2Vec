@@ -9,8 +9,8 @@ def main():
     inp = sys.argv[1]
 
     logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-    model = KeyedVectors.load(inp)
-
+    # model = KeyedVectors.load(inp)
+    model = models.Word2Vec.load(inp)
     print("提供 3 種測試模式\n")
     print("輸入一個詞，則去尋找前一百個該詞的相似詞")
     print("輸入兩個詞，則去計算兩個詞的餘弦相似度")

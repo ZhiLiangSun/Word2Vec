@@ -17,7 +17,7 @@ $ python3 W2V_wiki_Process.py wikiData.xml.bz2 wiki.en.text
 
 #### Word2Vec model tranning
 
-$ python3 W2V_tranning.py wiki.en.text wiki.en.word2vec.model
+$ python3 W2V_tranning.py dir wiki.en.text.model wiki.en.text.vector
 
 #### Word2Vec model testing
 

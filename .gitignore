@@ -189,3 +189,4 @@ venv.bak/
 *.bz2
 *.model
 *.npy
+*.vector
