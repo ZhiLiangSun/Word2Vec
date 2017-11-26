@@ -1,16 +1,20 @@
 from gensim.models import word2vec
 from gensim.models.keyedvectors import KeyedVectors
 from gensim import models
+
 import logging
 import sys
+
+from src.Utils import Path
 
 
 def main():
     inp = sys.argv[1]
+    Model_Path = Path.Data_Path + '/model/' + inp
 
     logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-    # model = KeyedVectors.load(inp)
-    model = models.Word2Vec.load(inp)
+    # model = KeyedVectors.load(Model_Path)
+    model = models.Word2Vec.load(Model_Path)
     print("提供 3 種測試模式\n")
     print("輸入一個詞，則去尋找前一百個該詞的相似詞")
     print("輸入兩個詞，則去計算兩個詞的餘弦相似度")

@@ -4,6 +4,8 @@ import sys
 
 from gensim.corpora import WikiCorpus
 
+from src.Utils import Path
+
 if __name__ == '__main__':
     program = os.path.basename(sys.argv[0])
     logger = logging.getLogger(program)
@@ -21,10 +23,12 @@ if __name__ == '__main__':
     inp, outp = sys.argv[1:3]
     space = " "
     i = 0
+    DT_Path = Path.Data_Path + '/raw_data/' + inp
+    Des_Path = Path.Data_Path + '/parsed_data/' + outp
 
-    output = open(outp, 'w')
+    output = open(Des_Path, 'w')
 
-    wiki = WikiCorpus(inp, dictionary={})
+    wiki = WikiCorpus(DT_Path, dictionary={})
     for text in wiki.get_texts():
         output.write(space.join(text) + "\n")
         i = i + 1

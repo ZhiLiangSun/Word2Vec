@@ -1,11 +1,13 @@
 from gensim.models.keyedvectors import KeyedVectors
-import FileUtils
 
-file_path = "/Users/zlsun/IdeaProjects/Information-Retrieval/res/stem topics.txt"
-model_path = "/Users/zlsun/PycharmProjects/Word2vec/wiki.en.word2vec.model"
+from src.Utils import FileUtils
+from src.Utils import Path
 
-model = KeyedVectors.load(model_path)
-topic_query = FileUtils.openfile(file_path)
+File_Path = "/Users/zlsun/IdeaProjects/Information-Retrieval/res/stem topics.txt"
+Model_Path = Path.Data_Path + '/model/wiki.en.text.model'
+
+model = KeyedVectors.load(Model_Path)
+topic_query = FileUtils.openfile(File_Path)
 
 for query in topic_query:
     q_list = query.split()
