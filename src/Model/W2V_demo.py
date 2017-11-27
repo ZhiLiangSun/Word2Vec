@@ -4,17 +4,22 @@ from gensim import models
 
 import logging
 import sys
+import os
 
 from src.Utils import Path
 
 
 def main():
     inp = sys.argv[1]
-    Model_Path = Path.Data_Path + '/model/' + inp
+    Model_Path = os.path.join(Path.Data_Path + os.sep, 'model' + inp)
 
     logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
     # model = KeyedVectors.load(Model_Path)
     model = models.Word2Vec.load(Model_Path)
+
+    # for Google Pre-trained word and phrase vectors
+    # model = models.KeyedVectors.load_word2vec_format(Model_Path, binary=True)
+
     print("提供 3 種測試模式\n")
     print("輸入一個詞，則去尋找前一百個該詞的相似詞")
     print("輸入兩個詞，則去計算兩個詞的餘弦相似度")

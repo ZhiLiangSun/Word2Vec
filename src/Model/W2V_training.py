@@ -23,8 +23,8 @@ if __name__ == '__main__':
         sys.exit(1)
     outp1, outp2 = sys.argv[1:3]
 
-    DT_Path = Path.Data_Path + '/parsed_data'
-    Des_Path = Path.Data_Path + '/model/'
+    DT_Path = os.path.join(Path.Data_Path + os.sep, 'parsed_data')
+    Des_Path = os.path.join(Path.Data_Path + os.sep, 'model')
 
     sentences = PathLineSentences(DT_Path)
     model = Word2Vec(sentences, size=400, window=5, min_count=5,

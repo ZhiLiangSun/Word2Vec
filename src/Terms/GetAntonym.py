@@ -3,8 +3,11 @@ from gensim.models.keyedvectors import KeyedVectors
 from src.Utils import FileUtils
 from src.Utils import Path
 
+import os
+
 File_Path = "/Users/zlsun/IdeaProjects/Information-Retrieval/res/stem topics.txt"
-Model_Path = Path.Data_Path + '/model/wiki.en.text.model'
+W_File_Path = "C:\\Users\\Lab714\\Desktop\\Information-Retrieval\\res\\stem topics.txt"
+Model_Path = os.path.join(Path.Data_Path + os.sep, 'model', 'wiki.en.text.model')
 
 model = KeyedVectors.load(Model_Path)
 topic_query = FileUtils.openfile(File_Path)

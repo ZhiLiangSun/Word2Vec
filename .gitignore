@@ -190,3 +190,4 @@ venv.bak/
 *.model
 *.npy
 *.vector
+res/

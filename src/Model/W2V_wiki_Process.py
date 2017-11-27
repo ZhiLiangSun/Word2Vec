@@ -23,8 +23,8 @@ if __name__ == '__main__':
     inp, outp = sys.argv[1:3]
     space = " "
     i = 0
-    DT_Path = Path.Data_Path + '/raw_data/' + inp
-    Des_Path = Path.Data_Path + '/parsed_data/' + outp
+    DT_Path = os.path.join(Path.Data_Path + os.sep, 'raw_data', inp)
+    Des_Path = os.path.join(Path.Data_Path + os.sep, 'parsed_data', outp)
 
     output = open(Des_Path, 'w')
 
