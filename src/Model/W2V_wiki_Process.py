@@ -26,7 +26,7 @@ if __name__ == '__main__':
     DT_Path = os.path.join(Path.Data_Path + os.sep, 'raw_data', inp)
     Des_Path = os.path.join(Path.Data_Path + os.sep, 'parsed_data', outp)
 
-    output = open(Des_Path, 'w')
+    output = open(Des_Path, 'w', encoding='utf8')
 
     wiki = WikiCorpus(DT_Path, dictionary={})
     for text in wiki.get_texts():

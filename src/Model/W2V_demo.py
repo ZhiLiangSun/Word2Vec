@@ -11,7 +11,7 @@ from src.Utils import Path
 
 def main():
     inp = sys.argv[1]
-    Model_Path = os.path.join(Path.Data_Path + os.sep, 'model' + inp)
+    Model_Path = os.path.join(Path.Data_Path + os.sep, 'model', inp)
 
     logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
     # model = KeyedVectors.load(Model_Path)
