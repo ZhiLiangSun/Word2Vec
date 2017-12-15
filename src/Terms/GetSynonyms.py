@@ -14,16 +14,19 @@ model = models.Word2Vec.load(Model_Path)
 topic_query = FileUtils.openfile(File_Path)
 
 count = 0
+topic = 301
 
 for query in topic_query:
     q_list = query.split()
+    des = os.path.join(Path.Data_Path + os.sep, "synTerm" + os.sep, str(topic) + ".txt")
+    topic = topic + 1
 
     for q in q_list:
         try:
-            res = model.most_similar(q, topn=3)
+            res = model.most_similar(q, topn=30)
             for item in res:
                 print(item[0] + "," + str(item[1]))
-                with open("SyOutput.txt", "a", encoding='utf8', newline='') as text_file:
+                with open(des, "a", encoding='utf8', newline='') as text_file:
                     text_file.write(item[0] + " " + str(item[1]) + '\r\n')
         except KeyError as e:
             count = count + 1
