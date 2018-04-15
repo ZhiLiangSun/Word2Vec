@@ -8,7 +8,7 @@ import os
 
 File_Path = "/Users/zlsun/IdeaProjects/Information-Retrieval/res/TopicSet/unstem topics.txt"
 W_File_Path = "C:\\Users\\Lab714\\Desktop\\Information-Retrieval\\res\\TopicSet\\unstem topics.txt"
-Model_Path = os.path.join(Path.Data_Path + os.sep, 'model', 'wiki.en.text.model')
+Model_Path = os.path.join(Path.Data_Path + os.sep, 'model', 'wiki2.en.text.model')
 
 model = models.Word2Vec.load(Model_Path)
 topic_query = FileUtils.openfile(File_Path)
